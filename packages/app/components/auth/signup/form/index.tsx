@@ -1,6 +1,6 @@
 import { Formik } from 'formik'
 import { signUp, signInWithEmail } from 'app/services/authentication'
-import { Box, Spacer, useToast, VStack as Column } from 'native-base'
+import { Box, Spacer, Modal, Spinner, VStack as Column } from 'native-base'
 import { SignUpFormActions } from './actions'
 import { SignUpFormContent } from './content'
 import { SignUpFormFooter } from './footer'
@@ -101,36 +101,47 @@ export function SignUpForm() {
 
   return (
     <Box
+
       px={12}
-      pb={12}
+      pb={5}
+
       height="full"
-      bg={{
-        linearGradient: {
-          colors: ['#1A2134', '#090C13'],
-          start: [0, 1],
-          end: [0, 0],
-        },
-      }}
-      maxWidth={500}
+      // bg={{
+      //   linearGradient: {
+      //     colors: ['#1A2134', '#090C13'],
+      //     start: [0, 1],
+      //     end: [0, 0],
+      //   },
+      // }}
+      bg="brand.main"
+
+      maxWidth={450}
       width="full"
     >
+
       <SignUpFormHeader />
       {error && <FormError msg={error} setError={setError} />}
-      <Box>
+      <Box mt={4} >
         <Formik initialValues={formInitialValues} onSubmit={formSubmit}>
           {({ isSubmitting, handleSubmit }) => (
-            <Column space={9}>
+            <Column space={8} mx={1} >
+
               <SignUpFormContent />
+
               <SignUpFormActions
                 isLoading={isSubmitting}
                 onPress={handleSubmit}
               />
+
             </Column>
           )}
         </Formik>
       </Box>
-      <Spacer h={20} />
+      <Spacer />
+
       <SignUpFormFooter />
+
+
     </Box>
   )
 }

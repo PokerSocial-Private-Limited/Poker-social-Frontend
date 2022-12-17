@@ -1,15 +1,7 @@
 import { CreatePostInfo } from './create-post-info'
 import { useCreatePostMutation } from 'app/generates'
 import { useAuth } from 'app/hooks/auth'
-import {
-  Box,
-  CloseIcon,
-  Image,
-  Pressable,
-  Spacer,
-  Text,
-  useToast,
-} from 'native-base'
+import { Box, Image, Spacer, useToast } from 'native-base'
 import { useState } from 'react'
 import { useRouter } from 'solito/router'
 import { useEventDispatch } from 'app/hooks/event'
@@ -21,7 +13,6 @@ import { CreatePostHeader } from './create-post-header'
 import { CreatePostActions } from './create-post-action'
 import { showErrorToast, showSuccessToast } from 'app/utils/toast'
 import { Keyboard } from 'react-native'
-import * as ImagePicker from 'expo-image-picker/build/ImagePicker'
 
 export function CreatePost() {
   const { user } = useAuth()
@@ -33,25 +24,6 @@ export function CreatePost() {
   const [image, setImage] = useState<any | null>(null)
 
   const [{ fetching }, createPost] = useCreatePostMutation()
-
-  const pickImage = async (type: string) => {
-    const func =
-      type === 'camera'
-        ? ImagePicker.launchCameraAsync
-        : ImagePicker.launchImageLibraryAsync
-
-    // No permissions request is necessary for launching the image library
-    let result = await func({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      allowsEditing: true,
-      aspect: [4, 3],
-      quality: 1,
-    })
-
-    if (!result.cancelled) {
-      setImage(result)
-    }
-  }
 
   async function onPostCreateHandler() {
     if (!textAreaValue && !image) {
@@ -101,61 +73,18 @@ export function CreatePost() {
         setTextAreaValue={setTextAreaValue}
       />
       {image && (
-        <>
-          <Box alignItems="center" w="100%">
-            <Image
-              borderRadius={8}
-              source={{ uri: image.uri }}
-              w="full"
-              style={{
-                aspectRatio: image.width / image.height,
-                width: 200,
-              }}
-              alt="selected-image"
-            />
-
-            <Pressable
-              onPress={() => setImage(null)}
-              style={{
-                position: 'absolute',
-                top: 4,
-                right: 4,
-              }}
-            >
-              <CloseIcon color="red.500" />
-            </Pressable>
-
-            <Pressable
-              onPress={() => {
-                pickImage('gallery')
-              }}
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                right: 0,
-                left: 0,
-                height: 50,
-              }}
-            >
-              <Text
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  right: 0,
-                  left: 0,
-                  textAlign: 'center',
-                  backgroundColor: 'rgba(0,0,0,0.5)',
-                }}
-                color="blue.500"
-              >
-                Change Image
-              </Text>
-            </Pressable>
-          </Box>
-        </>
+        <Box px={4}>
+          <Image
+            borderRadius={8}
+            source={{ uri: image.uri }}
+            w="full"
+            style={{
+              aspectRatio: image.width / image.height,
+            }}
+            alt="selected-image"
+          />
+        </Box>
       )}
-      <Spacer />
-      <Spacer />
       <Spacer />
       <CreatePostActions image={image} setImage={setImage} />
     </>

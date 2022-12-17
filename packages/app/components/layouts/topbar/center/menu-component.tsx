@@ -15,10 +15,10 @@ export default function MenuComponent({
   link,
 }: MenuComponentProps) {
   return (
-    <SolitoLink href={`${link}`}>
-      <Column alignItems="center" justifyContent="center">
+    <SolitoLink href={`${link}`} >
+      <Column alignItems="center" justifyContent="center"  >
         {icon}
-        <Text bold color={color} fontSize="20">
+        <Text bold color={color} fontSize="18">
           {tname}
         </Text>
       </Column>

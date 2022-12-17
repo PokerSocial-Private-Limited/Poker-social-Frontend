@@ -12,7 +12,7 @@ export function PostCommentsScreen() {
   }
 
   return (
-    <Column flex={1} w="full" maxW="800px" backgroundColor="#090D14">
+    <Column w="full" maxW="800px" backgroundColor="#090D14">
       <CommentsList postId={id} />
     </Column>
   )

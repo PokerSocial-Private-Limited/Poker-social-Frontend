@@ -20,7 +20,7 @@ export function AllFriendsButton(props: AllFriendsButtonProps) {
       _hover={{ bg: '#0E121C' }}
     >
       <Text fontSize={14} bold>
-        All Friends (({props.count}))
+        All Friends
       </Text>
     </Button>
   )

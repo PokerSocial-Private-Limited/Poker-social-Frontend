@@ -27,7 +27,7 @@ export function ImageUpdateDialog({
           <Button
             py={1}
             px={8}
-            rounded={100}
+            rounded={80}
             bg="#1A2235"
             onPress={onClose}
             ref={cancelRef}

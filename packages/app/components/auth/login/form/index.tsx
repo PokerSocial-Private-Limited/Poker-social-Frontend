@@ -71,14 +71,15 @@ export function LoginForm() {
       px={12}
       pb={12}
       height="full"
-      bg={{
-        linearGradient: {
-          colors: ['#1A2134', '#090C13'],
-          start: [0, 1],
-          end: [0, 0],
-        },
-      }}
-      maxWidth={500}
+      // bg={{
+      //   linearGradient: {
+      //     colors: ['#1A2134', '#090C13'],
+      //     start: [0, 1],
+      //     end: [0, 0],
+      //   },
+      // }}
+      bg="brand.main"
+      maxWidth={450}
       width="full"
     >
       <Modal isOpen={loading}>
@@ -92,10 +93,10 @@ export function LoginForm() {
       </Modal>
       <LoginFormHeader />
       {error && <FormError msg={error} setError={setError} />}
-      <Box mt={8}>
+      <Box mt={5}>
         <Formik initialValues={formInitialValues} onSubmit={formSubmit}>
           {({ isSubmitting, handleSubmit }) => (
-            <Column space={8}>
+            <Column space={8} mx={6}>
               <LoginFormContent />
               <LoginFormActions
                 isLoading={isSubmitting}
@@ -108,7 +109,9 @@ export function LoginForm() {
         </Formik>
       </Box>
       <Spacer />
+
       <LoginFormFooter />
+
     </Box>
   )
 }

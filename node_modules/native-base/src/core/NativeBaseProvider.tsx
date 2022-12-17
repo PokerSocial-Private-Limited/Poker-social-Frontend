@@ -91,7 +91,7 @@ const NativeBaseProvider = (props: NativeBaseProviderProps) => {
             colorModeManager={colorModeManager}
             options={theme.config}
           >
-            <OverlayProvider isSSR>
+            <OverlayProvider>
               <ToastProvider>
                 <InitializeToastRef />
                 <SSRProvider>{children}</SSRProvider>

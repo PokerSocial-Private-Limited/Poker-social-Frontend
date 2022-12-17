@@ -1,13 +1,5 @@
 import { GalleryIcon } from 'app/assets/icons/gallery-icon'
-import {
-  Box,
-  TextArea,
-  Pressable,
-  Image,
-  Column,
-  Text,
-  CloseIcon,
-} from 'native-base'
+import { Box, TextArea, Pressable, Image, Column, Text } from 'native-base'
 import React from 'react'
 import * as ImagePicker from 'expo-image-picker/build/ImagePicker'
 import { ImageInfo } from 'expo-image-picker/build/ImagePicker'
@@ -16,7 +8,7 @@ import { CameraIcon } from 'app/assets/icons/camera-icon'
 export type PostMultiLineParmas = {
   textAreaValue: string
   setTextAreaValue: (value: string) => void
-  setImage: (image: any | null) => void
+  setImage: (image: any | null) => void,
   image: any | null
 }
 
@@ -24,7 +16,7 @@ export default function PostMultiLine({
   textAreaValue,
   setTextAreaValue,
   setImage,
-  image,
+  image
 }: PostMultiLineParmas) {
   const pickImage = async (type: string) => {
     const func =
@@ -57,12 +49,13 @@ export default function PostMultiLine({
         }}
         _focus={{ borderColor: 'gray.500' }}
         _hover={{ borderColor: 'gray.500' }}
-        w="full"
+        w="100%"
+        borderRadius={10}
         autoCompleteType={undefined}
       />
       <Column
-        h="100%"
-        w={480}
+        h={217}
+        w={435}
         borderColor="#1A2235"
         borderWidth={3}
         borderRadius={8}
@@ -71,53 +64,22 @@ export default function PostMultiLine({
         justifyContent="center"
       >
         {image ? (
-          <>
-            <Box>
-              <Image
-                borderRadius={8}
-                source={{ uri: image.uri }}
-                w="full"
-                style={{
-                  aspectRatio: image.width / image.height,
-                  width: 200,
-                }}
-                alt="selected-image"
-              />
+          <Box px={4}>
+            <Image
+              borderRadius={8}
+              source={{ uri: image.uri }}
+              w="full"
+              style={{
+                aspectRatio: image.width / image.height,
+                width: 200
 
-              <Pressable
-                onPress={() => setImage(null)}
-                style={{ position: 'absolute', top: 4, right: 4 }}
-              >
-                <CloseIcon color="red.500" />
-              </Pressable>
-
-              <Pressable
-                onPress={() => pickImage('gallery')}
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  right: 0,
-                  left: 0,
-                }}
-              >
-                <Text
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    right: 0,
-                    left: 0,
-                    textAlign: 'center',
-                    backgroundColor: 'rgba(0,0,0,0.5)',
-                  }}
-                  color="blue.500"
-                >
-                  Change Image
-                </Text>
-              </Pressable>
-            </Box>
-          </>
-        ) : (
-          <Pressable onPress={() => pickImage('gallery')}>
+              }}
+              alt="selected-image"
+            />
+          </Box>
+        )
+          :
+          (<Pressable onPress={() => pickImage('gallery')}>
             <Column
               justifyContent="center"
               borderColor="#3ABEFE"
@@ -134,7 +96,7 @@ export default function PostMultiLine({
               </Text>
             </Column>
           </Pressable>
-        )}
+          )}
       </Column>
     </Box>
   )

@@ -21,7 +21,7 @@ export function LeftSideBody() {
     <CommunityHelpIcon />,
   ]
   return (
-    <Column px={8} p={6} space={6}>
+    <Column px={6} p={6} space={4} >
       {icons.map((icon, i) => (
         <MediaCard icon={icon} key={i} />
       ))}

@@ -2,10 +2,12 @@
   src: url(Ionicons.ttf);
   font-family: 'Ionicons';
 }
+
 @font-face {
   src: url(EvilIcons.ttf);
   font-family: 'EvilIcons';
 }
+
 @font-face {
   src: url(Entypo.ttf);
   font-family: 'Entypo';
@@ -44,4 +46,11 @@
 @font-face {
   src: url(MaterialCommunityIcons.ttf);
   font-family: 'MaterialCommunityIcons';
+
+}
+
+@font-face {
+  src: url(RussoOne-Regular.ttf);
+  font-family: 'RussoOne-Regular';
+
 }

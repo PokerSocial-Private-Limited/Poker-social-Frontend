@@ -40,22 +40,22 @@ export function ResetForm({ email }: { email: string }) {
 
   return (
     <Box
-      px={8}
+      px={12}
       pb={12}
       height="full"
       bg="brand.main"
-      maxWidth={500}
+      maxWidth={450}
       width="full"
     >
       <ResetFormHeader />
       {error && <FormError msg={error} setError={setError} />}
-      <Box h={16} />
-      <Box mt={4}>
+
+      <Box mt={8}>
         <Formik initialValues={formInitialValues} onSubmit={formSubmit}>
           {({ isSubmitting, handleSubmit }) => (
-            <Column space={8}>
+            <Column space={12} mx={8} mt={10}>
               <ResetFormContent />
-              <Box h={30} />
+
               <ResetFormActions
                 isLoading={isSubmitting}
                 onPress={handleSubmit}

@@ -21,15 +21,17 @@ export function LeftSideHeader() {
   }
 
   return (
-    <Box borderBottomColor="black" borderBottomWidth={1} px={12} py={4}>
-      <Row space={4}>
-        <Button style={{ margin: 0, padding: 0 }} onPress={() => push('/'+ user?.username ?? '')} background="transparent">
+    <Box borderBottomColor="black" borderBottomWidth={1} px={12} py={1}>
+      <Row space={8} >
+        <Button style={{ margin: 0, padding: 0 }} onPress={() => push('/' + user?.username ?? '')} background="transparent">
           <UserAvatar width={60} height={60} url={data?.user.profileImage?.url} />
         </Button>
-        <ProfileContent
-          fullName={data?.user.name || ''}
-          username={user?.username || ''}
-        />
+        <Row bottom={6}>
+          <ProfileContent
+            fullName={data?.user.name || ''}
+            username={user?.username || ''}
+          />
+        </Row>
       </Row>
     </Box>
   )

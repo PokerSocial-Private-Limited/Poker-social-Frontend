@@ -1,10 +1,11 @@
+import { baseFontSize } from 'native-base/lib/typescript/theme/tools'
 import React from 'react'
 import Svg, { G, Path } from 'react-native-svg'
 import { IconProps } from './icon-props.type'
 
 export function CameraIcon({ color = 'white' }: IconProps) {
   return (
-    <Svg id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297">
+    <Svg id="Capa_1" x="0px" y="0px" viewBox="0 0 297 297" >
       <G>
         <Path
           fill={color}

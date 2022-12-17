@@ -7,13 +7,16 @@ import { Link as SolitoLink } from 'solito/link'
 
 export function LoginFormContent() {
   return (
-    <Column>
+    <Column  >
       <FormikEmailInputField />
-      <Spacer h={6} />
+      <Spacer h={4} />
       <FormikPasswordInputField />
-      <SolitoLink href="/forgot">
-        <Text fontWeight="semibold">Forgot Password?</Text>
+
+
+      <SolitoLink href="/forgot" >
+        <Text fontWeight="semibold" >Forgot Password?</Text>
       </SolitoLink>
+
     </Column>
   )
 }

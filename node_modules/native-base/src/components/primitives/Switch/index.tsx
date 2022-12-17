@@ -87,7 +87,7 @@ const Switch = (
       disabled={disabled || isDisabled || combinedProps.isDisabled}
       onValueChange={(val: boolean) => {
         onValueChange && onValueChange(val);
-        onToggle ? onToggle(val) : state.toggle();
+        onToggle ? onToggle() : state.toggle();
       }}
       value={value || checked}
       ref={mergeRefs([ref, _ref])}

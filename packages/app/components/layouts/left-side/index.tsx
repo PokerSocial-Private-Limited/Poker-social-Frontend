@@ -6,7 +6,7 @@ import { LeftSideHeader } from './header'
 export function LeftSide() {
   return (
     <Column
-      maxW={400}
+      maxW={320}
       width="full"
       bg="#1A2235"
       position="fixed"

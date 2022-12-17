@@ -15,7 +15,7 @@ type LoginFormActionsProps = {
 export function LoginFormActions(props: LoginFormActionsProps) {
   const { onGooglePress, onFacebookPress } = props
   return (
-    <Column space={12}>
+    <Column space={4} my={8}>
       <LoginButton {...props} />
 
       <Row justifyContent="center" space={2}>
@@ -31,7 +31,7 @@ export function LoginFormActions(props: LoginFormActionsProps) {
 
       <Spacer h={8} />
 
-      <Button.Group justifyContent="center" space={12}>
+      <Button.Group justifyContent="center" space={12} >
         <AppleLoginButton onPress={onFacebookPress} />
         <FacebookLoginButton onPress={onFacebookPress} />
         <GoogleLoginButton onPress={onGooglePress} />

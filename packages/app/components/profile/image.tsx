@@ -21,7 +21,7 @@ export function ProfileImage({
 
   return (
     <>
-      <ZStack mt={-100} w={200}>
+      <ZStack mt={-100} w={280}>
         <UserImage url={imageUrl} />
         {isUser && (
           <Box ml={180} mt={130}>

@@ -60,12 +60,6 @@ const Pressable = (
   const { focusProps, isFocused } = useFocus();
   const { isFocusVisible, focusProps: focusRingProps }: any = useFocusRing();
 
-  const stateProps = {
-    isPressed: isPressedProp || isPressed,
-    isFocused: isFocusedProp || isFocused,
-    isHovered: isHoveredProp || isHovered,
-  };
-
   const {
     onPressIn,
     onPressOut,
@@ -75,7 +69,9 @@ const Pressable = (
     onBlur,
     ...resolvedProps
   } = usePropsResolution('Pressable', props, {
-    ...stateProps,
+    isPressed: isPressedProp || isPressed,
+    isFocused: isFocusedProp || isFocused,
+    isHovered: isHoveredProp || isHovered,
     isFocusVisible: isFocusVisibleProp || isFocusVisible,
     isDisabled: disabled || isDisabled,
   });
@@ -110,7 +106,13 @@ const Pressable = (
       disabled={disabled || isDisabled}
       {...resolvedProps}
     >
-      {typeof children !== 'function' ? children : children({ ...stateProps })}
+      {typeof children !== 'function'
+        ? children
+        : children({
+            isPressed,
+            isHovered,
+            isFocused,
+          })}
     </StyledPressable>
   );
 };

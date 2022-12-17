@@ -13,7 +13,7 @@ export function CreatePostAction({
   return (
     <Row
       justifyContent="center"
-      borderTopColor="gray.700"
+      borderTopColor="gray.800"
       borderTopWidth={1}
       p={6}
     >
@@ -22,12 +22,12 @@ export function CreatePostAction({
         onPress={onPostCreate}
         size="lg"
         py="1"
-        px={40}
+        px={50}
         rounded="3xl"
         bg="#3ABEFE"
         _hover={{ bg: '#007EBB' }}
       >
-        <Text px={4} bold fontSize="xl">
+        <Text px={2} bold fontSize="xl">
           Post
         </Text>
       </Button>

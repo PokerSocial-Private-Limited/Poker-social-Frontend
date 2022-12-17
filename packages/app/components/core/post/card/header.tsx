@@ -42,7 +42,7 @@ export function PostCardHeader({
 
   const profileLink = useProfileLink(username)
   return (
-    <Row px={3} alignItems="center" space={2}>
+    <Row px={8} alignItems="center" space={7}>
       <SolitoLink href={profileLink}>
         <Avatar
           source={{
@@ -65,7 +65,7 @@ export function PostCardHeader({
         </Text>
       </SolitoLink>
 
-      <Spacer />
+      {/* <Spacer />
       {showOptions ? (
         isDesktop ? (
           <PostCardOptionsPopover
@@ -83,7 +83,7 @@ export function PostCardHeader({
             />
           </View>
         )
-      ) : null}
+      ) : null} */}
     </Row>
   )
 }

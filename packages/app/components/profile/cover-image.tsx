@@ -15,7 +15,7 @@ function CoverImage({ url }: CoverImageProps) {
       size="2xl"
       w="100%"
       maxW="800px"
-      h="100%"
+      h="110%"
     />
   )
 }

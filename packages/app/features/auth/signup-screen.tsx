@@ -1,6 +1,8 @@
 import React from 'react'
 import { Flex, ScrollView } from 'native-base'
 import { ImageBackground } from 'react-native'
+import { IMAGES } from 'app/assets/images'
+
 import { SignUpForm } from 'app/components/auth/signup/form'
 
 const image = { uri: 'https://i.ibb.co/3mJQcFY/bgmain-3.png' }
@@ -8,7 +10,7 @@ const image = { uri: 'https://i.ibb.co/3mJQcFY/bgmain-3.png' }
 function SignUpScreen() {
   return (
     <ImageBackground
-      source={image}
+      source={IMAGES.BackgroundImage}
       resizeMode="cover"
       style={{ flex: 1, justifyContent: 'center' }}
     >

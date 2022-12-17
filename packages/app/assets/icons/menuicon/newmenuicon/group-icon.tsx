@@ -3,7 +3,7 @@ import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg'
 
 export function GroupIcon() {
   return (
-    <Svg fillRule="evenodd" clipRule="evenodd" viewBox="0 0 71 71">
+    <Svg width="45" height="65" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 71 71">
       <Defs>
         <LinearGradient
           id="group"

@@ -20,7 +20,7 @@ import { generateRNFile } from 'app/utils/file'
 import { CreatePostHeader } from './create-post-header'
 import { CreatePostActions } from './create-post-action'
 import { showErrorToast, showSuccessToast } from 'app/utils/toast'
-import { Keyboard } from 'react-native'
+import { Keyboard, View } from 'react-native'
 import * as ImagePicker from 'expo-image-picker/build/ImagePicker'
 
 export function CreatePost() {
@@ -102,55 +102,75 @@ export function CreatePost() {
       />
       {image && (
         <>
-          <Box alignItems="center" w="100%">
-            <Image
-              borderRadius={8}
-              source={{ uri: image.uri }}
-              w="full"
+          <Box alignItems="center" justifyContent="center">
+            <View
               style={{
-                aspectRatio: image.width / image.height,
-                width: 200,
+                width: '100%',
+                height: '100%',
+                position: 'relative',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-              alt="selected-image"
-            />
-
-            <Pressable
-              onPress={() => setImage(null)}
-              style={{
-                position: 'absolute',
-                top: 4,
-                right: 4,
-              }}
+              pointerEvents="none"
             >
-              <CloseIcon color="red.500" />
-            </Pressable>
+              <Image
+                borderRadius={8}
+                source={{ uri: image.uri }}
+                w="full"
+                style={{
+                  aspectRatio: image.width / image.height,
+                  width: '80%',
+                  marginBottom: 10,
+                }}
+                alt="selected-image"
+              />
+              <Pressable
+                onPress={() => setImage(null)}
+                style={{
+                  position: 'absolute',
+                  top: 4,
+                  right: 4,
+                }}
+              >
+                <CloseIcon color="red.500" />
+              </Pressable>
 
-            <Pressable
-              onPress={() => {
-                pickImage('gallery')
-              }}
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                right: 0,
-                left: 0,
-                height: 50,
-              }}
-            >
-              <Text
+              <Pressable
+                onPress={() => {
+                  pickImage('gallery')
+                }}
                 style={{
                   position: 'absolute',
                   bottom: 0,
                   right: 0,
                   left: 0,
-                  textAlign: 'center',
-                  backgroundColor: 'rgba(0,0,0,0.5)',
+                  height: 50,
                 }}
-                color="blue.500"
               >
-                Change Image
-              </Text>
-            </Pressable>
+                <Text
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    right: 0,
+                    left: 0,
+                    textAlign: 'center',
+                    backgroundColor: 'rgba(0,0,0,0.5)',
+                    height: 50,
+                    lineHeight: 50,
+                    fontSize: 16,
+                    marginBottom: 10,
+                    width: '100%',
+                    justifyContent: 'center',
+                  }}
+                  color="blue.500"
+                  onPress={() => {
+                    pickImage('gallery')
+                  }}
+                >
+                  Change Image
+                </Text>
+              </Pressable>
+            </View>
           </Box>
         </>
       )}

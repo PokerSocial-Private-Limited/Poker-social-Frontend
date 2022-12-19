@@ -18,7 +18,7 @@ export function AllFriendRequestsButton(props: AllFriendRequestsButtonProps) {
       {...props}
     >
       <Text bold fontSize={14}>
-        Friend Requests (({props.count}))
+        Friend Requests
       </Text>
     </Button>
   )

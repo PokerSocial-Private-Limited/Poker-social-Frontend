@@ -38,6 +38,7 @@ export type PostCardProps = {
     }
     content: string
   }[]
+
   onLikePressed: (postId: string, isLiked: boolean) => void
   onCommentPressed: (postId: string) => void
   onRemoveButtonPressed: (postId: string) => void
@@ -80,7 +81,14 @@ export function PostCard({
       {content != '' ? <PostCardContent content={content} /> : <Box py={0.2} />}
       {media.length > 0 && <PostCardMedia media={media} />}
       <PostCardActions
-        friends={(friends && friends.friendsByUsername.map(f => ({ name: f.friend.name, id: f.id, image: f.friend.profileImage }))) as any}
+        friends={
+          (friends &&
+            friends.friendsByUsername.map((f) => ({
+              name: f.friend.name,
+              id: f.id,
+              image: f.friend.profileImage,
+            }))) as any
+        }
         username={username}
         postId={id}
         isLiked={isLiked}

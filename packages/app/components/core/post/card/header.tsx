@@ -63,6 +63,12 @@ export function PostCardHeader({
         <Text fontSize="xs" color="#A5AFCE">
           {format(new Date(createdAt), 'en_US')}
         </Text>
+
+        <Text fontSize="xs" color="#A5AFCE">
+          {
+            //taggedUsers?.map((user) => `@${user.username}`).join(' ')
+          }
+        </Text>
       </SolitoLink>
 
       <Spacer />

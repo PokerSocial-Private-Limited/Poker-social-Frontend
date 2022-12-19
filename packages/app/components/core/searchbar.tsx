@@ -9,7 +9,6 @@ type SearchBarProps = {
   innerRef?: any
   state?: [string, React.Dispatch<React.SetStateAction<string>>]
   onSearchBlur?: () => void
-  
 }
 
 function SearchBar({
@@ -18,7 +17,7 @@ function SearchBar({
   showSoftInputOnFocus = false,
   innerRef,
   state,
-  onSearchBlur
+  onSearchBlur,
 }: SearchBarProps) {
   const router = useRouter()
   const { isDesktop } = usePlatform()
@@ -27,8 +26,8 @@ function SearchBar({
 
   return (
     <Input
-      onBlur={()=> onSearchBlur && onSearchBlur()}
-      onTouchEndCapture={()=>console.log('onTouchEndCapture')}
+      onBlur={() => onSearchBlur && onSearchBlur()}
+      onTouchEndCapture={() => console.log('onTouchEndCapture')}
       ref={innerRef}
       showSoftInputOnFocus={showSoftInputOnFocus}
       flexGrow={1}

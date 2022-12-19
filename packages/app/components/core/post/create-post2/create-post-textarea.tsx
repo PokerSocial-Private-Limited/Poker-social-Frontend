@@ -32,12 +32,12 @@ export default function PostMultiLine({
         ? ImagePicker.launchCameraAsync
         : ImagePicker.launchImageLibraryAsync
 
-    // No permissions request is necessary for launching the image library
     let result = await func({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
+      // allowsMultipleSelection: true,
     })
 
     if (!result.cancelled) {
@@ -73,6 +73,9 @@ export default function PostMultiLine({
         {image ? (
           <>
             <Box>
+              {/* {Array.isArray(image) ? (
+                image.map((image: ImageInfo) => {
+                  return ( */}
               <Image
                 borderRadius={8}
                 source={{ uri: image.uri }}
@@ -83,6 +86,20 @@ export default function PostMultiLine({
                 }}
                 alt="selected-image"
               />
+              {/* )
+                })
+              ) : (
+                <Image
+                  borderRadius={8}
+                  source={{ uri: image.uri }}
+                  w="full"
+                  style={{
+                    aspectRatio: image.width / image.height,
+                    width: 200,
+                  }}
+                  alt="selected-image"
+                />
+              )} */}
 
               <Pressable
                 onPress={() => setImage(null)}

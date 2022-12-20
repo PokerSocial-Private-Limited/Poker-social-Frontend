@@ -14,8 +14,8 @@ function FacebookLoginButton({ onPress }: FacebookLoginButtonProps) {
       _pressed={{ bg: 'brand.fbBtn' }}
       borderRadius={8}
     >
-      <Row alignItems="center" space={2} py={1} px={2}>
-        <FontAwesome5 name="facebook" size={24} color="white" />
+      <Row alignItems="center" space={0} >
+        <FontAwesome5 name="facebook" size={26} color="white" />
       </Row>
     </Button>
   )

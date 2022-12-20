@@ -41,7 +41,7 @@ export function FormikAgeInputField() {
   )
 
   return (
-    <Column p={2} my={2} space={2}>
+    <Column p={2} space={2}>
       <Text fontWeight="semibold">Date Of Birth</Text>
       <Row space={4} justifyContent="space-between">
         <FormikDropdownInputField

@@ -59,10 +59,6 @@ export type CreatePostInput = {
   content: Scalars['String'];
   /** Array of images and media in post of the user. */
   media: Array<Scalars['Upload']>;
-  /** Tagged Friends of the post */
-  taggedFriends?: InputMaybe<Array<Scalars['String']>>;
-  /** Tagged Location of the post */
-  taggedLocation?: InputMaybe<Scalars['String']>;
 };
 
 export type CreateUserInput = {
@@ -170,7 +166,7 @@ export type Mutation = {
   removePost: Post;
   removeProfileImage: User;
   removeUser: User;
-  sharePost: Scalars['String'];
+  sharePost: Post;
   unLikeComment: Comment;
   unLikePost: Scalars['String'];
   updateUser: User;
@@ -243,7 +239,6 @@ export type MutationRemoveUserArgs = {
 
 
 export type MutationSharePostArgs = {
-  postData: PostData;
   postId: Scalars['String'];
 };
 
@@ -283,9 +278,9 @@ export enum ParentType {
 export type Post = {
   __typename?: 'Post';
   /** Activity of the post. */
-  activity?: Maybe<PostActivity>;
+  activity: PostActivity;
   /** Author of the post who originally created the post. */
-  author?: Maybe<ShortUser>;
+  author: ShortUser;
   /** Text content  of the user. */
   content?: Maybe<Scalars['String']>;
   /** Creation date of post */
@@ -293,30 +288,21 @@ export type Post = {
   /** Id of  the post. */
   id: Scalars['ID'];
   /** Whether the post is liked by the user. */
-  isLiked?: Maybe<Scalars['Boolean']>;
+  isLiked: Scalars['Boolean'];
   /** Array of images and media in post of the user. */
-  media?: Maybe<Array<Media>>;
+  media: Array<Media>;
   /** Recent comments of the post. */
-  recentComments?: Maybe<Array<Comment>>;
-  /** Tageed freinds of the post. */
-  taggedFriends?: Maybe<Array<Scalars['String']>>;
-  /** Location of the post. */
-  taggedLocation?: Maybe<Scalars['String']>;
+  recentComments: Array<Comment>;
   /** Updation date of post */
   updatedAt: Scalars['DateTime'];
   /**  User of the post who owns the post. */
-  user?: Maybe<ShortUser>;
+  user: ShortUser;
 };
 
 export type PostActivity = {
   __typename?: 'PostActivity';
   commentsCount: Scalars['Float'];
   likesCount: Scalars['Float'];
-};
-
-export type PostData = {
-  taggedFriends?: InputMaybe<Array<Scalars['String']>>;
-  taggedLocation?: InputMaybe<Scalars['String']>;
 };
 
 export type Query = {
@@ -338,7 +324,6 @@ export type Query = {
   postsByUsername: Array<Post>;
   searchUsers: Array<User>;
   user: User;
-  userByEmail: User;
   userById: User;
   users: Array<User>;
 };
@@ -399,11 +384,6 @@ export type QueryUserArgs = {
 };
 
 
-export type QueryUserByEmailArgs = {
-  email: Scalars['String'];
-};
-
-
 export type QueryUserByIdArgs = {
   id: Scalars['ID'];
 };
@@ -440,8 +420,6 @@ export type UpdateUserInput = {
   lastName?: InputMaybe<Scalars['String']>;
   /** Profile image of the user. */
   profileImage?: InputMaybe<Scalars['Upload']>;
-  /** A unique username assigned to the user. */
-  username?: InputMaybe<Scalars['String']>;
 };
 
 export type User = {
@@ -523,26 +501,15 @@ export type WatchNotificationsSubscription = { __typename?: 'Subscription', watc
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, content?: string | null, taggedFriends?: Array<string> | null, taggedLocation?: string | null, isLiked?: boolean | null, createdAt: string, updatedAt: string, media?: Array<{ __typename?: 'Media', url: string, mimetype: string, hash: string }> | null, author?: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', url: string, hash: string } | null } | null, activity?: { __typename?: 'PostActivity', likesCount: number, commentsCount: number } | null, recentComments?: Array<{ __typename?: 'Comment', content?: string | null, user: { __typename?: 'ShortUser', username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }> | null }> };
+export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, content?: string | null, isLiked: boolean, createdAt: string, updatedAt: string, media: Array<{ __typename?: 'Media', url: string, mimetype: string, hash: string }>, author: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', url: string, hash: string } | null }, activity: { __typename?: 'PostActivity', likesCount: number, commentsCount: number }, recentComments: Array<{ __typename?: 'Comment', content?: string | null, user: { __typename?: 'ShortUser', username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }> }> };
 
 export type CreatePostMutationVariables = Exact<{
   content: Scalars['String'];
   media: Array<Scalars['Upload']> | Scalars['Upload'];
-  taggedLocation?: InputMaybe<Scalars['String']>;
-  taggedFriends?: InputMaybe<Array<Scalars['String']> | Scalars['String']>;
 }>;
 
 
 export type CreatePostMutation = { __typename?: 'Mutation', createPost: { __typename?: 'Post', id: string } };
-
-export type SharePostMutationVariables = Exact<{
-  postId: Scalars['String'];
-  taggedFriends?: InputMaybe<Array<Scalars['String']> | Scalars['String']>;
-  taggedLocation?: InputMaybe<Scalars['String']>;
-}>;
-
-
-export type SharePostMutation = { __typename?: 'Mutation', sharePost: string };
 
 export type RemovePostMutationVariables = Exact<{
   id: Scalars['String'];
@@ -570,7 +537,7 @@ export type ProfileQueryVariables = Exact<{
 }>;
 
 
-export type ProfileQuery = { __typename?: 'Query', user: { __typename?: 'User', id: string, name?: string | null, firstName?: string | null, lastName?: string | null, username: string, bio?: string | null, profileImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null, coverImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null }, friendsByUsername: Array<{ __typename?: 'Friend', id: string, friend: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }>, postsByUsername: Array<{ __typename?: 'Post', id: string, content?: string | null, taggedFriends?: Array<string> | null, taggedLocation?: string | null, isLiked?: boolean | null, createdAt: string, updatedAt: string, media?: Array<{ __typename?: 'Media', url: string, mimetype: string, hash: string }> | null, author?: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null } | null, activity?: { __typename?: 'PostActivity', likesCount: number, commentsCount: number } | null, recentComments?: Array<{ __typename?: 'Comment', content?: string | null, user: { __typename?: 'ShortUser', username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }> | null }> };
+export type ProfileQuery = { __typename?: 'Query', user: { __typename?: 'User', id: string, name?: string | null, firstName?: string | null, lastName?: string | null, username: string, bio?: string | null, profileImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null, coverImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null }, friendsByUsername: Array<{ __typename?: 'Friend', id: string, friend: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }>, postsByUsername: Array<{ __typename?: 'Post', id: string, content?: string | null, isLiked: boolean, createdAt: string, updatedAt: string, media: Array<{ __typename?: 'Media', url: string, mimetype: string, hash: string }>, author: { __typename?: 'ShortUser', name: string, username: string, profileImage?: { __typename?: 'Media', url: string, hash: string, mimetype: string } | null }, activity: { __typename?: 'PostActivity', likesCount: number, commentsCount: number }, recentComments: Array<{ __typename?: 'Comment', content?: string | null, user: { __typename?: 'ShortUser', username: string, profileImage?: { __typename?: 'Media', hash: string, url: string, mimetype: string } | null } }> }> };
 
 export type FriendsByUsernameQueryVariables = Exact<{
   username: Scalars['String'];
@@ -842,8 +809,6 @@ export const PostsDocument = gql`
       mimetype
       hash
     }
-    taggedFriends
-    taggedLocation
     author {
       name
       profileImage {
@@ -878,10 +843,8 @@ export function usePostsQuery(options?: Omit<Urql.UseQueryArgs<PostsQueryVariabl
   return Urql.useQuery<PostsQuery>({ query: PostsDocument, ...options });
 };
 export const CreatePostDocument = gql`
-    mutation createPost($content: String!, $media: [Upload!]!, $taggedLocation: String, $taggedFriends: [String!]) {
-  createPost(
-    createPostInput: {content: $content, media: $media, taggedLocation: $taggedLocation, taggedFriends: $taggedFriends}
-  ) {
+    mutation createPost($content: String!, $media: [Upload!]!) {
+  createPost(createPostInput: {content: $content, media: $media}) {
     id
   }
 }
@@ -889,18 +852,6 @@ export const CreatePostDocument = gql`
 
 export function useCreatePostMutation() {
   return Urql.useMutation<CreatePostMutation, CreatePostMutationVariables>(CreatePostDocument);
-};
-export const SharePostDocument = gql`
-    mutation sharePost($postId: String!, $taggedFriends: [String!], $taggedLocation: String) {
-  sharePost(
-    postId: $postId
-    postData: {taggedLocation: $taggedLocation, taggedFriends: $taggedFriends}
-  )
-}
-    `;
-
-export function useSharePostMutation() {
-  return Urql.useMutation<SharePostMutation, SharePostMutationVariables>(SharePostDocument);
 };
 export const RemovePostDocument = gql`
     mutation removePost($id: String!) {
@@ -971,8 +922,6 @@ export const ProfileDocument = gql`
       mimetype
       hash
     }
-    taggedFriends
-    taggedLocation
     author {
       name
       profileImage {

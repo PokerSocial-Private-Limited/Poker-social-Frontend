@@ -4,7 +4,7 @@ import { Link as SolitoLink } from 'solito/link'
 export function SignUpFormFooter() {
   return (
     <Center>
-      <Row>
+      <Row >
         <Text fontSize="xs" fontWeight="medium">
           By creating an acount you accept our{' '}
         </Text>

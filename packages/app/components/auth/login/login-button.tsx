@@ -1,4 +1,4 @@
-import { Box, Button } from 'native-base'
+import { Box, Button, Spacer } from 'native-base'
 
 type LoginButtonProps = {
   isLoading?: boolean
@@ -8,11 +8,13 @@ type LoginButtonProps = {
 function LoginButton({ isLoading, onPress }: LoginButtonProps) {
   return (
     <Box
+
       bg={{
         linearGradient: {
           colors: ['#008CF3', '#11224A'],
           start: [0, 0],
           end: [0, 1],
+
         },
       }}
       rounded="sm"
@@ -21,6 +23,7 @@ function LoginButton({ isLoading, onPress }: LoginButtonProps) {
         width="full"
         isLoading={isLoading}
         bg="transparent"
+
         onPress={onPress}
         _text={{
           fontWeight: 'semibold',

@@ -8,7 +8,7 @@ type ResetFormActionsProps = {
 
 export function ResetFormActions(props: ResetFormActionsProps) {
   return (
-    <Column space={12}>
+    <Column space={12} mt={12}>
       <SubmitButton {...props} />
     </Column>
   )

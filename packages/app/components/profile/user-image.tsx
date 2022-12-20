@@ -13,10 +13,13 @@ function UserImage({ url }: UserImageProps) {
           url ||
           'https://pokersocial-public.s3.ap-south-1.amazonaws.com/blank-avatar.png',
       }}
-      size={220}
+      size={150}
+      top={10}
+      left={10}
+
       maxW="220px"
-      borderWidth={4}
-      borderRadius={220 / 2}
+      borderWidth={3}
+      borderRadius={150 / 2}
     />
   )
 }

@@ -18,10 +18,10 @@ export function CreatePostInfo({
   return (
     <Column space={5} px={4}>
       <Row alignItems="center" space={5}>
-        {/* <UserAvatar url={profile?.profileImage?.url} />
+        <UserAvatar url={profile?.profileImage?.url} />
         <Text fontSize={15} bold>
           {name}
-        </Text> */}
+        </Text>
       </Row>
       <PostTextArea
         textAreaValue={textAreaValue}

@@ -13,8 +13,6 @@ import { CreatePostInfo } from './create-post-info'
 export function CreatePost2() {
   const { user } = useAuth()
 
-  // console.log(user)
-
   const router = useRouter()
   const dispatch = useEventDispatch()
 
@@ -36,11 +34,7 @@ export function CreatePost2() {
         if (!imageName) {
           throw new Error('Image name is empty')
         }
-        // images.push(generateRNFile(image.uri, imageName, image.type ?? 'image'))
-        const file = generateRNFile(image.uri, imageName, image.type ?? 'image')
-        const response = await fetch(file.uri)
-        const blob = await response.blob()
-        images.push(blob)
+        images.push(generateRNFile(image.uri, imageName, image.type ?? 'image'))
       }
 
       // Calling API to create post
@@ -65,13 +59,16 @@ export function CreatePost2() {
     <Column bg="#0E121C">
       <CreatePostHeader />
       <CreatePostInfo
-        name={user?.username ?? ''}
+        name={user!?.username}
         textAreaValue={textAreaValue}
         setTextAreaValue={setTextAreaValue}
         image={image}
         setImage={setImage}
       />
-      <CreatePostAction onPostCreate={onPostCreateHandler} isLoading={false} />
+      <CreatePostAction
+        onPostCreate={onPostCreateHandler}
+        isLoading={false}
+      />
     </Column>
   )
 }

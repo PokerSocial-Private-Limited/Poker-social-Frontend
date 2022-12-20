@@ -16,8 +16,11 @@ function SignUpButton({ isLoading, onPress }: SingUpButtonProps) {
         },
       }}
       rounded="sm"
+      mx={13}
+
     >
       <Button
+
         width="full"
         isLoading={isLoading}
         onPress={onPress}

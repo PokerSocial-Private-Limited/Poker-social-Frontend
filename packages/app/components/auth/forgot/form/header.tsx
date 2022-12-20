@@ -9,7 +9,7 @@ export function ForgotFormHeader() {
   const { back } = useRouter()
   return (
     <Column>
-      <Column my={8} mb={16} safeAreaTop alignItems="center" space={8}>
+      <Column py={8} mb={16} safeAreaTop alignItems="center" space={8}>
         <SolitoLink href="/login">
           <SiteLogo />
         </SolitoLink>

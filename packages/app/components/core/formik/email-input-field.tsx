@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { FormikInputField } from './input-field'
-
 export function FormikEmailInputField() {
   function validateEmail(value: string) {
     let error = ''
@@ -16,12 +15,16 @@ export function FormikEmailInputField() {
   }
 
   return (
+
     <FormikInputField
       key="email"
       type="text"
       name="email"
       validate={validateEmail}
       placeholder="Email/Mobile"
+
+
     />
+
   )
 }

@@ -1,4 +1,4 @@
-import { Column, Row, Text } from 'native-base'
+import { Column, Row, Text, Spacer } from 'native-base'
 import { Link as SolitoLink } from 'solito/link'
 
 import SignUpButton from '../signup-button'
@@ -10,9 +10,9 @@ type SignUpFormActionsProps = {
 
 export function SignUpFormActions(props: SignUpFormActionsProps) {
   return (
-    <Column space={6}>
+    <Column space={2} my={8}>
       <SignUpButton {...props} />
-      <Row justifyContent="center" space={2}>
+      <Row justifyContent="center" space={2} >
         <Text fontSize="lg" fontWeight="semibold">
           Already have an account ?
         </Text>
@@ -22,6 +22,7 @@ export function SignUpFormActions(props: SignUpFormActionsProps) {
           </Text>
         </SolitoLink>
       </Row>
+      <Spacer h={8} />
     </Column>
   )
 }

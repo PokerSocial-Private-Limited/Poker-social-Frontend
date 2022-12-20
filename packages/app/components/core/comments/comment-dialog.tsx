@@ -24,10 +24,10 @@ export function CreatePostCommentDialog({
       _slide={{ duration: 50 }}
       _backdrop={{
         background: 'black',
-        opacity: 0.7,
+        opacity: 0.10,
       }}
     >
-      <Modal.Content maxW="500" minH="600" maxH={600} backgroundColor="#111623">
+      <Modal.Content maxW="500" minH="600" right={-675} maxH={600} bottom={20} backgroundColor="#111623">
         <Modal.CloseButton />
         <CommentsList postId={id} />
       </Modal.Content>

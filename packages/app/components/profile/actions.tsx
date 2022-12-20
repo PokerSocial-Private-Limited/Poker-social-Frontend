@@ -29,7 +29,9 @@ function Actions({
       {isUser ? (
         <Button
           py="1"
-          mt="4"
+          mt="12"
+          right={6}
+          top={2}
           size="lg"
           rounded="2xl"
           bg="#3ABEFE"
@@ -69,6 +71,7 @@ function Actions({
             onPress={() => onPress('send')}
             py="1"
             mt="4"
+            right={4}
             size="lg"
             rounded="2xl"
             bg="brand.btn"
@@ -83,6 +86,8 @@ function Actions({
           <Button
             py="1"
             size="lg"
+            top={2}
+            right={4}
             variant="ghost"
             colorScheme="error"
             onPress={() => onPress('cancel')}

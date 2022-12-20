@@ -12,7 +12,7 @@ import Svg, {
 
 export function LiveIcon() {
   return (
-    <Svg fillRule="evenodd" clipRule="evenodd" viewBox="0 0 291 291">
+    <Svg width="45" height="65" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 291 291">
       <Defs>
         <LinearGradient
           id="liveicon"

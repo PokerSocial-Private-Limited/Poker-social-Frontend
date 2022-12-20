@@ -24,7 +24,7 @@ export function CoverImageUpdateActionsSheet({
         onRemove={removeCoverImageHandler}
       />
       <Actionsheet isOpen={isOpen} onClose={onClose} hideDragIndicator={true}>
-        <Actionsheet.Content p={0}>
+        <Actionsheet.Content p={0} width={250} right={-1600}>
           <Actionsheet.Item
             onPress={() => {
               updateCoverImageHandler()
@@ -53,6 +53,6 @@ export function CoverImageUpdateActionsSheet({
           </Actionsheet.Item>
         </Actionsheet.Content>
       </Actionsheet>
-    </Center>
+    </Center >
   )
 }

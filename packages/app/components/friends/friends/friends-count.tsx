@@ -18,6 +18,9 @@ export function FriendsCount({ count = 0 }: FriendsCountProps) {
       >
         Friends
       </Text>
+      <Text fontWeight="semibold" color="white" fontSize={18} my={2} bold>
+        {count}
+      </Text>
     </Row>
   )
 }

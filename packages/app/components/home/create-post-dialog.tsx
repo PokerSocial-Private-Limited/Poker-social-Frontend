@@ -26,12 +26,12 @@ export function CreatePostDialog({ isOpen, setIsOpen }: CreatePostDialogProps) {
       zIndex={-1111}
     >
       <Modal.Content
-        maxWidth="550"
+        maxWidth="500"
+        minH="400"
         backgroundColor="#111623"
         borderColor="#5393B2"
         borderWidth={2}
-        borderRadius={20}
-        maxHeight={`${Dimensions.get('window').height - 10}px`}
+        borderRadius={30}
       >
         {isDesktop ? (
           <>

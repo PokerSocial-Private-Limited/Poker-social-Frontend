@@ -28,7 +28,7 @@ export function SearchUserCard({
   return (
     <SolitoLink href={profileLink}>
       <Row space={4} alignItems="center">
-        <UserAvatar url={profileImage?.url} height={50} width={50} />
+        <UserAvatar url={profileImage?.url} height={50} width={40} />
         <Column>
           <Text color="#3ABEFE">{username}</Text>
           <Text bold>{name}</Text>

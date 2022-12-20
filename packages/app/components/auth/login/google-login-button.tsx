@@ -14,7 +14,7 @@ function GoogleLoginButton({ onPress }: GoogleLoginButtonProps) {
       _pressed={{ bg: 'brand.googleBtn' }}
       borderRadius={8}
     >
-      <Row alignItems="center" space={2} py={1} px={2}>
+      <Row alignItems="center" space={2} >
         <AntDesign name="google" size={24} color="white" />
       </Row>
     </Button>

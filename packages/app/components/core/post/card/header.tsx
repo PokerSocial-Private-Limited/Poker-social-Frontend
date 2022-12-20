@@ -42,7 +42,7 @@ export function PostCardHeader({
 
   const profileLink = useProfileLink(username)
   return (
-    <Row px={3} alignItems="center" space={2}>
+    <Row px={8} alignItems="center" space={7}>
       <SolitoLink href={profileLink}>
         <Avatar
           source={{
@@ -63,15 +63,9 @@ export function PostCardHeader({
         <Text fontSize="xs" color="#A5AFCE">
           {format(new Date(createdAt), 'en_US')}
         </Text>
-
-        <Text fontSize="xs" color="#A5AFCE">
-          {
-            //taggedUsers?.map((user) => `@${user.username}`).join(' ')
-          }
-        </Text>
       </SolitoLink>
 
-      <Spacer />
+      {/* <Spacer />
       {showOptions ? (
         isDesktop ? (
           <PostCardOptionsPopover
@@ -89,7 +83,7 @@ export function PostCardHeader({
             />
           </View>
         )
-      ) : null}
+      ) : null} */}
     </Row>
   )
 }

@@ -40,11 +40,12 @@ export function ForgotForm() {
 
   return (
     <Box
-      px={8}
+      px={12}
       pb={12}
+
       height="full"
       bg="brand.main"
-      maxWidth={500}
+      maxWidth={450}
       width="full"
     >
       <ForgotFormHeader />
@@ -52,7 +53,7 @@ export function ForgotForm() {
       <Box mt={8}>
         <Formik initialValues={formInitialValues} onSubmit={formSubmit}>
           {({ isSubmitting, handleSubmit }) => (
-            <Column space={8}>
+            <Column space={12} mx={8}>
               <ForgotFormContent isMobile={isMobile} />
               <ForgotFormActions
                 isLoading={isSubmitting}

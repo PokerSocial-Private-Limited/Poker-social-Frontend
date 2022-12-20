@@ -3,7 +3,7 @@ import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg'
 
 export function EventsIcon() {
   return (
-    <Svg fillRule="evenodd" clipRule="evenodd" viewBox="0 0 291 291">
+    <Svg width="45" height="65" fillRule="evenodd" clipRule="evenodd" viewBox="0 0 291 291">
       <Defs>
         <LinearGradient
           id="eventicon"

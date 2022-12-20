@@ -28,8 +28,5 @@
     "web": "cd apps/next && yarn next",
     "build:web": "cd apps/next && yarn build",
     "gql": "cd packages/app && yarn gql"
-  },
-  "dependencies": {
-    "next-seo": "^5.15.0"
   }
 }

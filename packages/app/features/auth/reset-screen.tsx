@@ -3,6 +3,7 @@ import { ResetForm } from 'app/components/auth/reset/form'
 import { Flex } from 'native-base'
 import { ImageBackground } from 'react-native'
 import { createParam } from 'solito'
+import { IMAGES } from 'app/assets/images'
 
 const image = { uri: 'https://i.ibb.co/3mJQcFY/bgmain-3.png' }
 
@@ -15,7 +16,7 @@ function ResetScreen() {
 
   return (
     <ImageBackground
-      source={image}
+      source={IMAGES.BackgroundImage}
       resizeMode="cover"
       style={{ flex: 1, justifyContent: 'center' }}
     >

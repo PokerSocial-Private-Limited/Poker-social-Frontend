@@ -25,16 +25,18 @@ export function PostCardFooter({ comments }: PostCardFooterProps) {
   const router = useRouter()
 
   return (
-    <Row px={5} mt={5} mb={2} alignItems="center" space={1}>
+
+    <Row px={12} mt={5} mb={2} alignItems="center" space={5}>
       <SolitoLink href={profileLink}>
         <UserAvatar url={user.profileImage?.url} />
       </SolitoLink>
 
       <Text fontSize="sm">
-        <Text bold color="#3ABEFE" onPress={() => router.push(profileLink)}>
+        <Text bold color="#3ABEFE" onPress={() => router.push(profileLink)} >
           {user.username}&nbsp;
         </Text>
-        {content}
+        <Text ml={2}>{content}</Text>
+
       </Text>
     </Row>
   )

@@ -5,11 +5,11 @@ import SiteLogo from '../../../core/site-logo'
 
 export function LoginFormHeader() {
   return (
-    <Column my={8} safeAreaTop alignItems="center" space={8}>
+    <Column my={2} safeAreaTop alignItems="center" space={20}>
       <SolitoLink href="/login">
         <SiteLogo height={57} width={341} />
       </SolitoLink>
-      <Text fontFamily="heading" color="white" fontSize="2xl">
+      <Text fontFamily="heading" color="white" fontSize="2xl" py={8}>
         SIGN IN
       </Text>
     </Column>

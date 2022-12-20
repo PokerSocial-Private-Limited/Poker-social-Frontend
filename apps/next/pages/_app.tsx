@@ -4,7 +4,6 @@ import React from 'react'
 import type { SolitoAppProps } from 'solito'
 import 'raf/polyfill'
 import '../public/fonts/styles.css'
-import { NextSeo } from 'next-seo'
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   const layout = (Component as any).layout

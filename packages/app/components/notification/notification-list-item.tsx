@@ -40,7 +40,7 @@ export function NotificationListItem({
       borderRightRadius={50}
     >
       <Row space={4} px={4} py={2} alignItems="center">
-        {/* <LinkButton username={username}>
+        <LinkButton username={username}>
           <Image
             source={{
               uri:
@@ -52,7 +52,7 @@ export function NotificationListItem({
             borderRadius={100}
             alt="user-image"
           />
-        </LinkButton> */}
+        </LinkButton>
 
         <Row space={2}>
           <Text color="#3ABEFE" bold fontSize="20">
@@ -66,8 +66,8 @@ export function NotificationListItem({
         <Spacer />
 
         <Row mr={4}>
-          <Pressable onPress={() => setIsOpen(false)}>
-            <Entypo name="cross" size={24} color="white" />
+          <Pressable onPress={() => setIsOpen(true)}>
+            <Entypo name="dots-three-horizontal" size={24} color="white" />
           </Pressable>
         </Row>
       </Row>

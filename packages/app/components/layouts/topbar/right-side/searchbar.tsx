@@ -68,8 +68,8 @@ export default function TopBarSearch() {
                 data={
                   searchText
                     ? data?.searchUsers.filter(
-                        (s) => !s.username.includes('DISABLED')
-                      )
+                      (s) => !s.username.includes('DISABLED')
+                    )
                     : []
                 }
                 ItemSeparatorComponent={() => <Box height={4} />}
@@ -85,7 +85,7 @@ export default function TopBarSearch() {
                   <Box
                     borderLeftRadius={50}
                     borderRightRadius={50}
-                    py={2}
+                    py={5}
                     bg="#0E121C"
                     mb={4}
                     px={2}

@@ -10,15 +10,17 @@ function UserImageUpdateButton({ onPress }: UserImageUpdateButtonProps) {
   return (
     <IconButton
       onPress={onPress}
-      width="50"
-      height="50"
+      width="8"
+      height="8"
+      right={3}
       borderRadius={50 / 2}
       size={12}
+      bottom={2}
       variant="solid"
       background="#3ABEFE"
       _icon={{
         color: 'red.700',
-        size: 'xl',
+        size: 'md',
       }}
       _hover={{
         bg: '#007EBB',

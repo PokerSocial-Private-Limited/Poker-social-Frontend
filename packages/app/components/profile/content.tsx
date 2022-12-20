@@ -9,11 +9,11 @@ type ProfileContentProps = {
 
 function ProfileContent({ fullName, username, bio }: ProfileContentProps) {
   return (
-    <Column alignItems="center" mt={4}>
+    <Column alignItems="center" mt={6} right={6}>
       <Text color="white" fontSize="lg" fontWeight="medium">
         {fullName}
       </Text>
-      <Text color="#3ABEFE" mb="1">
+      <Text color="#3ABEFE" mb="1" >
         {username}
       </Text>
       <Text color="white" fontSize="sm">

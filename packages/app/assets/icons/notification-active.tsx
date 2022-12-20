@@ -3,8 +3,8 @@ import Svg, { G, Path } from 'react-native-svg'
 import { IconProps } from './icon-props.type'
 
 export function NotificationActiveIcon({
-  width = '47',
-  height = '46',
+  width = '38',
+  height = '38',
 }: IconProps) {
   return (
     <Svg

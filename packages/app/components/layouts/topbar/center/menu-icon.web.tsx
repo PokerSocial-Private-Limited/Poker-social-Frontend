@@ -35,7 +35,7 @@ export default function MenuIcon() {
 
       {
         iname: 'Profile',
-        icon: <UserAvatar width={46} height={46} />,
+        icon: <UserAvatar width={35} height={35} />,
         color: router.asPath == '/' + user?.username ? '#34A8E1' : 'white',
         link: '/' + user?.username,
       },

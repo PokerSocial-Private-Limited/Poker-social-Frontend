@@ -2,7 +2,7 @@ import React from 'react'
 import Svg, { Path } from 'react-native-svg'
 import { IconProps } from './icon-props.type'
 
-export function MessageIcon({ width = '42', height = '43' }: IconProps) {
+export function MessageIcon({ width = '35', height = '35' }: IconProps) {
   return (
     <Svg
       width={width}

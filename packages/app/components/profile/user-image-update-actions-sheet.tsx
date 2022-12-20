@@ -23,9 +23,10 @@ export function UserImageUpdateActionsSheet({
         isOpen={disclose.isOpen}
         onClose={disclose.onClose}
         onRemove={removeProfileImageHandler}
+
       />
       <Actionsheet isOpen={isOpen} onClose={onClose} hideDragIndicator={true}>
-        <Actionsheet.Content p={0}>
+        <Actionsheet.Content p={0} width={250} right={-1600} >
           <Actionsheet.Item
             onPress={() => {
               updateProfileImageHandler()

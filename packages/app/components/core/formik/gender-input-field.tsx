@@ -3,8 +3,8 @@ import { FormikRadioButton } from './radio-button-input'
 
 export function FormikGenderInputField() {
   return (
-    <Column p={2} mb={4}>
-      <Text color="#556080" bold>
+    <Column py={2} mb={2}>
+      <Text color="#556080" bold >
         Gender
       </Text>
       <FormikRadioButton

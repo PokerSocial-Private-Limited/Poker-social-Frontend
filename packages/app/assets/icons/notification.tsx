@@ -2,7 +2,7 @@ import React from 'react'
 import Svg, { Path } from 'react-native-svg'
 import { IconProps } from './icon-props.type'
 
-export function NotificationIcon({ width = '47', height = '46' }: IconProps) {
+export function NotificationIcon({ width = '35', height = '35' }: IconProps) {
   return (
     <Svg
       width={width}

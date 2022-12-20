@@ -43,11 +43,6 @@ export function ProfileScreen({
     requestPolicy: 'network-only',
   })
 
-  // log all useProfileQuery data
-  useEffect(() => {
-    console.log('useProfileQuery data', data)
-  }, [data])
-
   const { onLikePressed } = usePostLikeEvent()
 
   if (fetching) {

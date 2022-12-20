@@ -18,12 +18,12 @@ export function PageHeader({ title }: PageHeaderProps) {
         isDesktop
           ? '#1A2235'
           : {
-              linearGradient: {
-                colors: ['#1A2235', '#000000'],
-                start: [0, 1],
-                end: [0, 0],
-              },
-            }
+            linearGradient: {
+              colors: ['#1A2235', '#000000'],
+              start: [0, 1],
+              end: [0, 0],
+            },
+          }
       }
       justifyContent="space-between"
       alignItems="center"

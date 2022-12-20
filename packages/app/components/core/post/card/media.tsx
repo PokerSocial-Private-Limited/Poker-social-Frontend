@@ -31,15 +31,20 @@ export function PostCardMedia({ media }: PostCardMediaProps) {
       )
     }
 
-    // else if (mediaType === 'video') {
+    // if (mediaType === 'video') {
     //   return (
-    //     <Video
-    //       source={{
-    //         uri: media[0]!.url,
+    //     <VideoPlayer
+    //       style={{
+    //         height: 300,
     //       }}
-    //       rate={1.0}
-    //       volume={1.0}
-    //       isMuted={false}
+    //       videoProps={{
+    //         useNativeControls: true,
+    //         shouldPlay: false,
+    //         resizeMode: Video.RESIZE_MODE_CONTAIN,
+    //         source: {
+    //           uri: media[0]!.url,
+    //         },
+    //       }}
     //     />
     //   )
     // }

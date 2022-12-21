@@ -36,6 +36,27 @@ query posts {
   }
 }
 
+mutation UpdatePost($updatePostInput: UpdatePostInput!) {
+  updatePost(updatePostInput: $updatePostInput) {
+    id
+    title
+    content
+    media {
+      url
+      hash
+      mimetype
+    }
+    author {
+      id
+      name
+    }
+    user {
+      id
+      name
+    }
+  }
+}
+
 mutation createPost($content: String!, $media: [Upload!]!) {
   createPost(createPostInput: { content: $content, media: $media }) {
     id
